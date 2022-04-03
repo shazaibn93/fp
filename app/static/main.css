@@ -1,0 +1,124 @@
+.container{
+    width:100vw;
+    height:100vh;
+
+    font-family: 'Quicksand', san-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar{
+    background-image: url('/static/images/128139.jpg');
+    border: none;
+    display: flex;
+    background-size: cover;
+    background-position:center top;
+    background-attachment: fixed;
+    justify-content: flex-end;
+    font-variant: small-caps;
+    color:#D7CDCC;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.navbar-brand {
+    font-variant: small-caps;
+    color:#D7CDCC;
+    display:flex;
+}
+
+.collapse {
+    display: flex;
+    float: right;
+}
+
+.nav-link {
+    font-variant: small-caps;
+    color:#D7CDCC;
+    float: right;
+}
+
+body{
+    border:none !important;
+    background-image: url('/static/images/128139.jpg');
+    background-size: cover;
+    background-position:center top;
+    background-attachment: fixed;
+    font-variant: small-caps;
+    color:#D7CDCC;
+}
+
+.playerpic {
+    background-size: cover;
+    height:auto;
+    background-position:center top;
+}
+
+.card {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background:rgba(0,0,0,0.25) 
+}
+
+.card-title {
+    text-align: center;
+    opacity: 1;
+    color: #56667A;
+}
+
+.card-text {
+    text-align: center;
+    opacity: 1;
+}
+
+.top {
+    text-align: center;
+    text-shadow: 20px;
+}
+
+.squad {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.teamworld {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.whole {
+    display: flex;
+    flex:12;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+.compare-body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.compare-title {
+    display: flex;
+    justify-content:space-between;
+}
+
+.vl {
+    border-left: 6px solid;
+    height: 5px;
+  }

@@ -1,0 +1,46 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+{%endblock%}
+
+{% block content %}
+    <h1>Search your NBA Player</h1>
+    <form action = "{{url_for('player')}}" method = "POST">
+    {{form.hidden_tag()}}
+     <div>
+        {{form.player.label(class="form-label")}}
+        {{form.player(class="form-control")}}
+        {% for error in form.player.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+    </div>
+    <hr>
+    <div>
+        {{form.submit(class="btn btn-primary form-control")}}
+    </div>
+    
+    {%if player %}
+    <div class="pcard">
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+            <img class = "playerpic" src="{{player.pic}}" class="card-img-top" alt="player pic" style="background-image:url({{player.team_pic}})">
+            <h4 class="card-title">{{player.full_name}}</h4>
+            <hr style="color:{{player.team_color}}">
+            <h6 class="card-text">{{player.team}}</h6>
+            <h6 class="card-text"># {{player.jersey}}</h6>
+            <hr style="color:{{player.team_color}}">
+            <p class="card-text">
+                <ul>
+                <li>Name: {{player.full_name}}</li>
+                <li>Team: {{player.team}}</li>
+                <li>Position: {{player.position}}</li>
+                <li>Height: {{player.height}}</li>
+                <li>Weight: {{player.weight}}</li>
+                </ul>
+            </p>     
+        </div>
+    </div>
+    </div>
+    {% endif %}
+    
+{%endblock%}

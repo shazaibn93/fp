@@ -1,0 +1,42 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+{%endblock%}
+
+{% block content %}
+    <div class="comp-page">
+        <h1>Search your NBA Players to Compare</h1>
+    </div>
+    <form action = "{{url_for('compare')}}" method = "POST">
+    {{form.hidden_tag()}}
+    <div>
+        {{form.season1.label(class="form-label")}}
+        {{form.season1(class="form-control")}}
+        {% for error in form.season1.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+
+        {{form.player1.label(class="form-label")}}
+        {{form.player1(class="form-control")}}
+        {% for error in form.player1.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+
+        {{form.season2.label(class="form-label")}}
+        {{form.season2(class="form-control")}}
+        {% for error in form.season1.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+
+        {{form.player2.label(class="form-label")}}
+        {{form.player2(class="form-control")}}
+        {% for error in form.player2.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+    </div>
+    <hr>
+    <div>
+        {{form.submit(class="btn btn-primary form-control")}}
+    </div>
+    
+{%endblock%}

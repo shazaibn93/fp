@@ -1,0 +1,35 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+    The World
+{%endblock%}
+
+
+{% block content %}
+    {%if users %}
+        <div class="whole">
+        {% for user in users %}
+            <div class = "teamworld">
+                <h2>{{user.first_name}}'s Team</h2>
+                {% for x in user.squad %}
+                    <div class="squad">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title">{{Stats.existsid(Players.existsid(x.main_id).main_id).season}} Season</h2>
+                                <img class = "playerpic" src="{{Players.existsid(x.main_id).pic}}" class="card-img-top" alt="player pic" style="background-image:url({{Players.existsid(x.main_id).team_pic}})">
+                                <h4 class="card-title">{{Players.existsid(x.main_id).full_name}}</h4>
+                                <hr style="color:{{Players.existsid(x.main_id).team_color}}">
+                                <h6 class="card-text">{{Players.existsid(x.main_id).team}}</h6>
+                                <h6 class="card-text"># {{Players.existsid(x.main_id).jersey}}</h6>
+                                <hr style="color:{{Players.existsid(x.main_id).team_color}}">
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %} 
+        <div>    
+    {% endif %}
+
+{%endblock%}
